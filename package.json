@@ -1,7 +1,10 @@
 {
   "name": "smart_brain_api",
   "version": "1.0.0",
-  "description": "smart brain api",
+  "description": "image recognition api",
+  "engines": {
+    "node": "10.x"
+  },
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
