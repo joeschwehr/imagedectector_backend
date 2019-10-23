@@ -9,7 +9,6 @@ const app = new Clarifai.App({
 const handleApiCall = (req, res) => {
     app.models.predict(Clarifai.FACE_DETECT_MODEL, req.body.inputField)
     .then(data => {
-        console.log("data: ", data);
         res.json(data);
     })
     .catch(err => res.status(400).json("unable to work with API"))
