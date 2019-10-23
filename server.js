@@ -24,7 +24,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // homepage
-app.get("/", (req, res) => {res.send("working")});
+app.get("/", (req, res) => {res.send("working... hoo rah! October 21, 2015. JPS.")});
 
 // // signin: POST = success fail
 // app.post("/signin", (req, res) => signin.handleSignin(req, res, db, bcrypt));
@@ -41,7 +41,7 @@ app.get("/", (req, res) => {res.send("working")});
 
 // app.post("/imageurl", (req, res) => image.handleApiCall(req, res));
 
-// const PORT = process.env.PORT || 3000;
-// app.listen(PORT, () => {
-//     console.log("Listening on port", PORT);
-// });
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log("Listening on port", PORT);
+});
