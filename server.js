@@ -17,31 +17,31 @@ const db = knex({
         password : '',
         database : 'smartbrain'
     }
-})
+});
 
-const app = express()
+const app = express();
 
-app.use(cors())
-app.use(bodyParser.json())
+app.use(cors());
+app.use(bodyParser.json());
 
 // homepage
-app.get("/", (req, res) => {res.send("Joe's app is up and running! Today! 528491")})
+app.get("/", (req, res) => {res.send("working")});
 
 // signin: POST = success fail
-app.post("/signin", (req, res) => signin.handleSignin(req, res, db, bcrypt))
+app.post("/signin", (req, res) => signin.handleSignin(req, res, db, bcrypt));
 
 // register a new user/add new user to db
 // register: POST returns user
-app.post("/register", (req, res) => register.handleRegister(req, res, db, bcrypt))
+app.post("/register", (req, res) => register.handleRegister(req, res, db, bcrypt));
 
 // profile/:userId: GET = user
-app.get("/profile/:id", (req, res) => profile.handleProfileGet(req, res, db))
+app.get("/profile/:id", (req, res) => profile.handleProfileGet(req, res, db));
 
 // image: PUT returns user with updated entries
-app.put("/image", (req, res) => image.handleImage(req, res, db))
+app.put("/image", (req, res) => image.handleImage(req, res, db));
 
-app.post("/imageurl", (req, res) => image.handleApiCall(req, res))
+app.post("/imageurl", (req, res) => image.handleApiCall(req, res));
 
 app.listen(PORT, () => {
-    console.log("Listening on port", PORT)
-})
+    console.log("Listening on port", PORT);
+});
