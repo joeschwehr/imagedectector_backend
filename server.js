@@ -12,8 +12,10 @@ const knex = require('knex')
 const db = knex({
     client: 'pg',
     connection: {
+
         connectionString: process.env.DATABASE_URL,
         ssl: true
+
         // host : '127.0.0.1',
         // user : 'macairjps',
         // password : '',
@@ -27,7 +29,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // homepage
-app.get("/", (req, res) => {res.send("working https://calm-beyond-96205.herokuapp.com/")});
+app.get("/", (req, res) => {res.send("working on heroku address: https://calm-beyond-96205.herokuapp.com/")});
 
 // signin: POST = success fail
 app.post("/signin", (req, res) => signin.handleSignin(req, res, db, bcrypt));
